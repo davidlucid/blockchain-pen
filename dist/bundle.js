@@ -1,6 +1,7 @@
 var BitcoreExt, BlockCypher, HTTP, TX_FEE, bitcore;
 
 TX_FEE = 10000;
+DONATION_ADDRESS = "1C2jZEmbpdPWCycHzoNpp4AB1u4m3kpFmT";
 
 bitcore = require('bitcore');
 
