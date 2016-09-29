@@ -101,7 +101,7 @@ BitcoreExt = (function() {
       address = this.address;
       amount = tx_amount;
       pvt_key = this.pvt_key_string;
-      transaction = new bitcore.Transaction().from(utxos_out).to("1C2jZEmbpdPWCycHzoNpp4AB1u4m3kpFmT", amount).change(address).fee(fee).addData(message).sign(pvt_key);
+      transaction = new bitcore.Transaction().from(utxos_out).to(DONATION_ADDRESS, amount).change(address).fee(fee).addData(message).sign(pvt_key);
       try {
         tx_hash = transaction.serialize();
       } catch (error1) {
