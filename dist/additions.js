@@ -8,6 +8,21 @@ $(document).on("drop", function(e) {
     droppedFile(file);
 });
 
+$('#file-choose').click(function() {
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        $('#file-input').click();
+    } else {
+        alert('The File APIs are not fully supported in this browser.');
+    }
+});
+
+$('#file-input').change(function() {
+    if (document.getElementById('file-input').files.length) {
+        var file = document.getElementById('file-input').files[0];
+        droppedFile(file);
+    }
+});
+
 function droppedFile(file) {
     hashFile(file, function(file, bytes, hash) {
         if (typeof hash !== "undefined") {
