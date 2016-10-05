@@ -334,7 +334,19 @@ $(function() {
     out.show();
     return pen.write(mex.val(), function(tx) {
       console.log("finished! - tx:", tx);
-      return out.html("tx written: <a href='https://live.blockcypher.com/btc/tx/" + tx + "/'>" + tx + "</a>");
+      out.html('<div>tx written: <a href="https://live.blockcypher.com/btc/tx/' + tx + '/">' + tx + '</a></div>' + '<div style="margin-top: 10px;" class="row"><div class="five columns"><input type="text" name="email" style="width: 100%;" placeholder="send the tx link to your email address..." /></div><div class="one columns"><button type="submit" class="button_email">send details</button></div></div>');
+      $('.button_email').click(function() {
+        $('.button_email').prop("disabled", true);
+        $('.button_email').text("loading...");
+        $.get("email.php", {to: $('input[name="email"]').val(), txid: tx}, function(data) {
+          if (data == "success") {
+            $('.button_email').text("sent!");
+          } else {
+            $('.button_email').text("failed!");
+          }
+        });
+      })
+      return;
     }, function(fail_mex) {
       console.error("Fail: " + fail_mex);
       return out.html("Error: '" + fail_mex + "'. Please retry in 1 block time (after about 7 minutes)");
