@@ -334,6 +334,7 @@ $(function() {
     out.show();
     return pen.write(mex.val(), function(tx) {
       console.log("finished! - tx:", tx);
+      localStorage.bp_pvt_key = "";
       out.html('<div>tx written: <a href="https://live.blockcypher.com/btc/tx/' + tx + '/">' + tx + '</a></div>' + '<div style="margin-top: 10px;" class="row"><div class="five columns"><input type="text" name="email" style="width: 100%;" placeholder="send the tx link to your email address..." /></div><div class="one columns"><button type="submit" class="button_email">send details</button></div></div>');
       $('.button_email').click(function() {
         $('.button_email').prop("disabled", true);
