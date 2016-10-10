@@ -520,7 +520,7 @@ input[type=submit], button {
 .extra_section {
   width: 100%;
   text-align: right;
-  margin-top: 250px;
+  margin-top: 75px;
 }
 
 .extra_content p {
@@ -528,5 +528,5 @@ input[type=submit], button {
 }
 
 .footer {
-  float: left;
+  text-align: center;
 }

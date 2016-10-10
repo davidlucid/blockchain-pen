@@ -1,16 +1,22 @@
+
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Blockchain Pen</title>
-    <meta name="description" content="Blockchain Pen - the easiest way to write immutable messages on the blockchain ">
+    <title>Blockchain Notary</title>
+    <meta name="description" content="Blockchain Notary - permanent messages written to the Blockchain ">
     <meta name="author" content="Francesco 'makevoid' Canessa">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="http://blockchainpen.com/img/stylus.png" />
+    <meta property="og:image" content="https://mobile-currency.com/notary2/img/logo.png" />
     <!-- TODO: embed local font -->
     <!-- <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="./css/vendor/normalize.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./css/style.css" media="screen" charset="utf-8">
+    <style type="text/css">
+.auto-style1 {
+	color: #170C5F;
+}
+</style>
   </head>
   <body>
     <div class="container">
@@ -18,11 +24,15 @@
         <header>
           <div class="row">
             <div class="one columns">
-              <img src="./img/stylus.svg">
+              <img src="./img/logo.png">
             </div>
             <div class="five columns">
-              <h1>Blockchain Pen</h1>
+              <h1>Blockchain Notary</h1>
             </div>
+            <div><span class="auto-style1"><strong>Permanent records in the Blockchain in 3 simple steps.</strong></span><br>
+				1. Send 0.0005 Bitcoin to the wallet address displayed.<br>2. 
+				Type your message in the box below, or MD5 hash your file.<br>3. 
+				Click SUBMIT</div>
           </div>
         </header>
         <div class="align-right address">
@@ -30,10 +40,10 @@
           <div class="row rel">
             <div class="qr hidden"></div>
             <p>You can send <span class="messages_num">0</span> messages<br />0.0005 BTC per message</p>
-            <p class="topup_msg hidden">You need to top-up!</p>
+            <p class="topup_msg hidden">To continue you will need to pay with Bitcoin</p>
           </div>
         </div>
-        <div class="spacer50"></div>
+        <div class="spacer10"></div>
         <div class="bc_stylus" >
           <div class="message_input" >
             <div class="row align-right">
@@ -46,38 +56,23 @@
               </div>
               <div class="row">
                 <div class="five columns">
-                  <input name="message" placeholder="your important message..." type="text" maxlength=75>
+                  <input name="message" placeholder="Type your message here to be permanently written to the Blockchain..." type="text" maxlength=75>
                 </div>
                 <div class="one columns">
                 <button class="main">
-                  Write
+                  Submit
                 </button>
               </div>
-              <button class="btn btn-primary btn-lg" id="file-choose">Or choose file to MD5 hash</button>
+              <button class="btn btn-primary btn-lg" id="file-choose">Drag and drop, or choose a file to be MD5 hashed and the string will be written to the Blockchain</button>
               <div class="hidden"><input type="file" id="file-input"></div>
-              <div>When the transaction is complete your transaction link will display here.</div>
+              <div>When the transaction is complete, your permanent Blockchain transaction link will be displayed here.</div>
               <div class="row">
                 <div class="six columns hidden outcome">
                   loading...
                 </div>
-              </div>
-
               <div class="extra_section">
-                <div class="footer">Powered By Mobile Currency, LLC.</div>
-                <a class="extra_btn" href="javascript:void(0)">
-                  extra features
-                </a>
-                <div class="extra_content hidden">
-                  <p><a class="reveal_pvtkey" href="javascript:void(0)">reveal private key</a></p>
-                  <p><a class="add_ew_prefix" href="javascript:void(0)">add EternityWall prefix</a></p>
-                  <p><a href="http://github.com/makevoid/blockchain_pen_coffee">view/edit the source code</a></p>
+                <div class="footer"><a href="https://mobile-currency.com/site" target="_blank">Powered By Mobile Currency, LLC </a>| Privacy Policy | Terms and Conditions</div>
                 </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <script type="text/javascript" src="./vendor/zepto.js"></script>
     <script type="text/javascript" src="./vendor/qrcode.js"></script>
